@@ -1415,6 +1415,27 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+    .hero-v2 {
+        min-height: auto;
+        padding: 5.5rem 0 2.5rem;
+    }
+
+    .hero-v2-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding-top: 56vw;
+        padding-bottom: 1rem;
+    }
+
+    .hero-text-col {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
     .nav-middle {
         display: none !important; /* Cache les liens sur mobile pour gagner de la place */
     }
@@ -1434,13 +1455,32 @@ h1, h2, h3, h4 {
 
     .hero-title {
         font-size: 2.2rem;
+        margin-bottom: 0;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+
+    .hero-social-proof {
+        align-items: flex-start;
+        margin-top: 0;
+        flex-wrap: wrap;
+    }
+
+    .hero-social-proof p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 
     .hero-labels-col {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        margin-top: 1.5rem;
+        margin-top: 0;
+        width: 100%;
+        padding: 0;
     }
 
     .testimonials-section, .faq-section, .bottom-cta-section {
@@ -1504,6 +1544,10 @@ h1, h2, h3, h4 {
         padding: 0.6rem 1rem;
         width: 100%;
         text-align: left;
+        white-space: normal;
+        line-height: 1.45;
+        justify-content: flex-start;
+        border-radius: 18px;
     }
     
     .impact-price {
