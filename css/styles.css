@@ -2005,8 +2005,8 @@ h1, h2, h3, h4 {
 
     .hero-labels-col {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.75rem;
         margin-top: 1rem;
         width: 100%;
@@ -2024,16 +2024,11 @@ h1, h2, h3, h4 {
         top: auto !important;
         left: auto !important;
         width: auto;
-        max-width: 280px;
+        max-width: 100%;
         text-align: center;
         animation: none;
+        flex-shrink: 0;
     }
-
-    .fl-1 { order: 1; }
-    .fl-2 { order: 2; }
-    .fl-3 { order: 3; }
-    .fl-4 { order: 4; }
-    .fl-5 { order: 5; }
 
     .testimonials-section, .faq-section, .bottom-cta-section {
         padding: 4rem 0;
