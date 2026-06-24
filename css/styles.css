@@ -1478,12 +1478,14 @@ h1, h2, h3, h4 {
         width: 100%;
         max-width: 440px;
     }
+}
 
 /* FAQ Section */
 .faq-section {
     padding: 6rem 0;
     background: #0d1f16;
     color: var(--white);
+    scroll-margin-top: 8rem;
 }
 
 .faq-layout {
@@ -1578,6 +1580,8 @@ h1, h2, h3, h4 {
     padding: 0 1.4rem;
     color: rgba(255, 255, 255, 0.72);
     line-height: 1.8;
+    margin: 0;
+    min-height: 0;
 }
 
 .faq-item.active .faq-answer {
@@ -1689,6 +1693,9 @@ h1, h2, h3, h4 {
     background-color: var(--text-main);
     color: var(--white);
     padding: 4rem 0 2rem;
+    scroll-margin-top: 8rem;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-top {
