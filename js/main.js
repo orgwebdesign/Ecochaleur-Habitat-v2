@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Popup Elements
     const popupOverlay = document.getElementById('popup-overlay');
     const btnClosePopup = document.getElementById('btn-close-popup');
-    const btnCloseModal = document.querySelector('.btn-close-modal');
     
     // Form Elements
     const form = document.getElementById('eligibility-form');
@@ -11,8 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtns = document.querySelectorAll('.btn-prev');
     const progressBar = document.getElementById('progress-bar');
     
-    // Total input steps = 2. Index 0 = Part A, Index 1 = Part B.
-    // Index 2 = Rejected, Index 3 = Success
+    const totalInputSteps = 7;
     let currentStep = 0;
 
     // ----- POPUP MANAGEMENT -----
@@ -39,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnClosePopup.addEventListener('click', closePopup);
-    if (btnCloseModal) btnCloseModal.addEventListener('click', closePopup);
 
     // Close on click outside
     popupOverlay.addEventListener('click', (e) => {
@@ -51,9 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----- FORM NAVIGATION -----
 
     const updateProgress = () => {
-        const totalSteps = 2; 
-        if(currentStep < totalSteps) {
-            const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
+        if(currentStep < totalInputSteps) {
+            const progressPercentage = ((currentStep + 1) / totalInputSteps) * 100;
             progressBar.style.width = `${progressPercentage}%`;
         } else {
             progressBar.style.width = '100%';
@@ -72,23 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Scroll popup to top
         document.querySelector('.popup-container').scrollTo(0, 0);
     };
-
-    // ----- STRICT EXCLUSION LOGIC (Part A) -----
-
-    const radioInputs = document.querySelectorAll('#step-1 input[type="radio"]');
-    
-    radioInputs.forEach(input => {
-        input.addEventListener('change', (e) => {
-            const radioCard = e.target.closest('.radio-card');
-            if(radioCard && radioCard.classList.contains('exclusion-trigger')) {
-                // Immediate Exclusion
-                currentStep = 2; // Index 2 is step-rejected
-                setTimeout(() => {
-                    showStep(currentStep);
-                }, 300); // Small delay for visual feedback of the red click
-            }
-        });
-    });
 
     // ----- VALIDATION -----
 
@@ -153,8 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             setTimeout(() => {
-                // Move to success step (Index 3)
-                currentStep = 3;
+                // Move to success step
+                currentStep = totalInputSteps;
                 showStep(currentStep);
                 
                 // Close popup automatically after 3 seconds

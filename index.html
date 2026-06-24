@@ -21,14 +21,14 @@
             <a href="#" class="nav-pill nav-logo" aria-label="Accueil">
                 <img src="assets/public /logo.svg" alt="Ecochaleur Habitat" class="site-logo site-logo-header">
             </a>
-            
+
             <!-- Middle: Brand / Links -->
             <div class="nav-pill nav-middle" style="display: flex; gap: 1.5rem;">
                 <a href="#" class="nav-link">Accueil</a>
                 <a href="#faq" class="nav-link">FAQ</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            
+
             <!-- Right: CTA -->
             <a href="tel:0800XXXXXX" class="nav-pill nav-cta">
                 Appel Gratuit
@@ -46,7 +46,7 @@
             <div class="hero-text-col">
                 <h1 class="hero-title">Vos factures d'électricité augmentent sans arrêt&nbsp;?</h1>
                 <p class="hero-subtitle">Ne subissez plus les hausses de tarifs. Découvrez comment l'énergie solaire protège votre pouvoir d'achat grâce aux aides de l'État.</p>
-                
+
                 <button type="button" class="btn btn-hero-cta btn-open-popup">
                     Faire le test gratuit <span class="cta-arrow">→</span>
                 </button>
@@ -97,7 +97,7 @@
             <div class="impact-price">1 €*</div>
             <p class="impact-subtext">Prenez le contrôle de votre énergie et protégez votre pouvoir d'achat sans avancer les frais.</p>
             <p class="impact-desc">Grâce aux subventions de l'État et aux solutions d'autofinancement, l'énergie solaire devient simple, accessible et sécurisée. Découvrez si vous pouvez en bénéficier en toute transparence.</p>
-            
+
             <div class="action-interface">
                 <div class="impact-actions">
                     <button type="button" class="btn btn-terracotta btn-xl btn-open-popup">
@@ -116,108 +116,46 @@
     <div id="popup-overlay" class="popup-overlay hidden">
         <div class="popup-container">
             <button type="button" id="btn-close-popup" class="btn-close-popup" aria-label="Fermer">Fermer et retourner à la page</button>
-            
+
             <div class="popup-content">
-                <h2 class="popup-title">Votre Test d'Éligibilité en 2 Minutes</h2>
-                
+                <p class="popup-kicker">PAC air/eau + eau chaude sanitaire</p>
+                <h2 class="popup-title">Formulaire de test d'éligibilité</h2>
+
                 <div class="progress-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
-                
-                <form id="eligibility-form" class="eligibility-form">
-                    
-                    <!-- PARTIE A : Pré-Qualification -->
+
+                <form id="eligibility-form" class="eligibility-form" novalidate>
+
+                    <!-- 1. Coordonnées -->
                     <div class="form-step active" id="step-1">
-                        <h3 class="step-subtitle">Partie A : Pré-Qualification Technique</h3>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Statut dans le logement :</label>
-                            <div class="radio-group">
-                                <label class="radio-card">
-                                    <input type="radio" name="status" value="proprio_occupant" required>
-                                    <span class="radio-content">Propriétaire Occupant</span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="status" value="proprio_bailleur">
-                                    <span class="radio-content">Propriétaire Bailleur</span>
-                                </label>
-                                <label class="radio-card exclusion-trigger">
-                                    <input type="radio" name="status" value="locataire">
-                                    <span class="radio-content">Locataire</span>
-                                </label>
+                        <span class="step-count">Étape 1 sur 7</span>
+                        <h3 class="step-subtitle">Vos coordonnées</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="lastname">Nom :</label>
+                                <input type="text" id="lastname" name="lastname" class="form-input" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Prénom :</label>
+                                <input type="text" id="firstname" name="firstname" class="form-input" placeholder="Votre prénom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Téléphone :</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="06 XX XX XX XX" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email :</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="exemple@mail.com" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Type de logement :</label>
-                            <div class="radio-group">
-                                <label class="radio-card">
-                                    <input type="radio" name="housing_type" value="house" required>
-                                    <span class="radio-content">Maison Individuelle</span>
-                                </label>
-                                <label class="radio-card exclusion-trigger">
-                                    <input type="radio" name="housing_type" value="apartment">
-                                    <span class="radio-content">Autre / Appartement</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Ancienneté du bâtiment :</label>
-                            <div class="radio-group">
-                                <label class="radio-card">
-                                    <input type="radio" name="age" value="old" required>
-                                    <span class="radio-content">Plus de 15 ans (Avant 2009)</span>
-                                </label>
-                                <label class="radio-card exclusion-trigger">
-                                    <input type="radio" name="age" value="new">
-                                    <span class="radio-content">Moins de 15 ans</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Chauffage actuel principal :</label>
-                            <div class="radio-group">
-                                <label class="radio-card">
-                                    <input type="radio" name="heating" value="fioul" required>
-                                    <span class="radio-content">Fioul</span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="heating" value="gaz">
-                                    <span class="radio-content">Gaz</span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="heating" value="elec">
-                                    <span class="radio-content">Électricité direct</span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="heating" value="pac">
-                                    <span class="radio-content">Pompe à chaleur</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Surface habitable approximative :</label>
-                            <div class="radio-group">
-                                <label class="radio-card">
-                                    <input type="radio" name="surface" value="<90" required>
-                                    <span class="radio-content">Moins de 90 m²</span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="surface" value="90-180">
-                                    <span class="radio-content">90 à 180 m²</span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="surface" value=">180">
-                                    <span class="radio-content">Plus de 180 m²</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="zipcode">Code Postal du logement :</label>
+                            <label class="form-label" for="zipcode">Code postal :</label>
                             <input type="text" id="zipcode" name="zipcode" class="form-input" placeholder="Ex: 59000" required>
                         </div>
 
@@ -226,51 +164,293 @@
                         </div>
                     </div>
 
-                    <!-- PARTIE B : Coordonnées -->
+                    <!-- 2. Situation -->
                     <div class="form-step" id="step-2">
-                        <h3 class="step-subtitle">Partie B : Coordonnées & Conformité Légale</h3>
-                        
+                        <span class="step-count">Étape 2 sur 7</span>
+                        <h3 class="step-subtitle">Votre situation</h3>
+
                         <div class="form-group">
-                            <label class="form-label" for="fullname">Nom & Prénom du déclarant :</label>
-                            <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Votre nom complet" required>
+                            <label class="form-label">Êtes-vous propriétaire du logement ?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="ownership" value="proprietaire_occupant" required>
+                                    <span class="radio-content">Oui, propriétaire occupant</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="ownership" value="locataire">
+                                    <span class="radio-content">Non, je suis locataire</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="step-actions split">
+                            <button type="button" class="btn btn-secondary btn-prev">Précédent</button>
+                            <button type="button" class="btn btn-primary btn-next btn-large">Continuer</button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Logement -->
+                    <div class="form-step" id="step-3">
+                        <span class="step-count">Étape 3 sur 7</span>
+                        <h3 class="step-subtitle">Votre logement</h3>
+
+                        <div class="form-group">
+                            <label class="form-label">Type de logement :</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="housing_type" value="maison_individuelle" required>
+                                    <span class="radio-content">Maison individuelle</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="housing_type" value="appartement">
+                                    <span class="radio-content">Appartement</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="housing_type" value="autre">
+                                    <span class="radio-content">Autre</span>
+                                </label>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="address">Adresse postale complète du logement :</label>
-                            <input type="text" id="address" name="address" class="form-input" placeholder="N°, Rue, Ville" required>
+                            <label class="form-label">Le logement a-t-il plus de 15 ans ?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="housing_age" value="oui" required>
+                                    <span class="radio-content">Oui</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="housing_age" value="non">
+                                    <span class="radio-content">Non</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="housing_age" value="inconnu">
+                                    <span class="radio-content">Je ne sais pas</span>
+                                </label>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="phone">Numéro de téléphone portable :</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="06 XX XX XX XX" required>
+                            <label class="form-label">Surface chauffée approximative :</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="heated_surface" value="moins_70" required>
+                                    <span class="radio-content">Moins de 70 m²</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="heated_surface" value="70_90">
+                                    <span class="radio-content">70 à 90 m²</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="heated_surface" value="plus_90">
+                                    <span class="radio-content">Plus de 90 m²</span>
+                                </label>
+                            </div>
                         </div>
-                        
+
+                        <div class="step-actions split">
+                            <button type="button" class="btn btn-secondary btn-prev">Précédent</button>
+                            <button type="button" class="btn btn-primary btn-next btn-large">Continuer</button>
+                        </div>
+                    </div>
+
+                    <!-- 4. Chauffage -->
+                    <div class="form-step" id="step-4">
+                        <span class="step-count">Étape 4 sur 7</span>
+                        <h3 class="step-subtitle">Votre chauffage actuel</h3>
+
                         <div class="form-group">
-                            <label class="form-label" for="email">Adresse Email :</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="exemple@mail.com" required>
+                            <label class="form-label">Quel est votre système de chauffage principal actuel ?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="current_heating" value="chaudiere_gaz" required>
+                                    <span class="radio-content">Chaudière gaz</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="current_heating" value="chaudiere_fioul">
+                                    <span class="radio-content">Chaudière fioul</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="current_heating" value="chaudiere_charbon">
+                                    <span class="radio-content">Chaudière charbon</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="current_heating" value="chauffage_electrique">
+                                    <span class="radio-content">Chauffage électrique</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="current_heating" value="poele_bois_granules">
+                                    <span class="radio-content">Poêle bois / granulés</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="current_heating" value="autre">
+                                    <span class="radio-content">Autre</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="step-actions split">
+                            <button type="button" class="btn btn-secondary btn-prev">Précédent</button>
+                            <button type="button" class="btn btn-primary btn-next btn-large">Continuer</button>
+                        </div>
+                    </div>
+
+                    <!-- 5. Revenus et aides -->
+                    <div class="form-step" id="step-5">
+                        <span class="step-count">Étape 5 sur 7</span>
+                        <h3 class="step-subtitle">Revenus et aides</h3>
+
+                        <div class="form-group">
+                            <label class="form-label">Nombre de personnes dans le foyer fiscal :</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="household_size" value="1" required>
+                                    <span class="radio-content">1</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="household_size" value="2">
+                                    <span class="radio-content">2</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="household_size" value="3">
+                                    <span class="radio-content">3</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="household_size" value="4">
+                                    <span class="radio-content">4</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="household_size" value="5_plus">
+                                    <span class="radio-content">5 ou plus</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Votre revenu fiscal de référence approximatif :</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="tax_income" value="moins_20000" required>
+                                    <span class="radio-content">Moins de 20 000 €</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="tax_income" value="20000_30000">
+                                    <span class="radio-content">20 000 € à 30 000 €</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="tax_income" value="30000_45000">
+                                    <span class="radio-content">30 000 € à 45 000 €</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="tax_income" value="45000_60000">
+                                    <span class="radio-content">45 000 € à 60 000 €</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="tax_income" value="plus_60000">
+                                    <span class="radio-content">Plus de 60 000 €</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="tax_income" value="plus_tard">
+                                    <span class="radio-content">Je préfère le communiquer ultérieurement</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="step-actions split">
+                            <button type="button" class="btn btn-secondary btn-prev">Précédent</button>
+                            <button type="button" class="btn btn-primary btn-next btn-large">Continuer</button>
+                        </div>
+                    </div>
+
+                    <!-- 6. Projet -->
+                    <div class="form-step" id="step-6">
+                        <span class="step-count">Étape 6 sur 7</span>
+                        <h3 class="step-subtitle">Votre projet</h3>
+
+                        <div class="form-group">
+                            <label class="form-label">Quel est votre objectif principal ?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="checkbox" name="project_goal" value="reduire_factures" required>
+                                    <span class="radio-content">Réduire mes factures de chauffage</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="project_goal" value="remplacer_chaudiere">
+                                    <span class="radio-content">Remplacer une chaudière ancienne</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="project_goal" value="installer_pac">
+                                    <span class="radio-content">Installer une pompe à chaleur air/eau</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="project_goal" value="eau_chaude_sanitaire">
+                                    <span class="radio-content">Produire aussi mon eau chaude sanitaire</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="project_goal" value="ameliorer_confort">
+                                    <span class="radio-content">Améliorer le confort du logement</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="project_goal" value="conseil">
+                                    <span class="radio-content">Je souhaite être conseillé</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Souhaitez-vous être rappelé pour une étude gratuite ?</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="callback" value="oui" required>
+                                    <span class="radio-content">Oui</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="callback" value="non">
+                                    <span class="radio-content">Non</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="step-actions split">
+                            <button type="button" class="btn btn-secondary btn-prev">Précédent</button>
+                            <button type="button" class="btn btn-primary btn-next btn-large">Continuer</button>
+                        </div>
+                    </div>
+
+                    <!-- 7. Consentement -->
+                    <div class="form-step" id="step-7">
+                        <span class="step-count">Étape 7 sur 7</span>
+                        <h3 class="step-subtitle">Consentement</h3>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="contact_consent" required>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">J'accepte d'être recontacté dans le cadre de ma demande de test d'éligibilité pour une pompe à chaleur air/eau et/ou une solution de chauffage + eau chaude sanitaire.</span>
+                            </label>
                         </div>
 
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="consent" required>
+                                <input type="checkbox" name="aid_conditions" required>
                                 <span class="checkmark"></span>
-                                <span class="checkbox-text">J'accepte d'être contacté(e) par téléphone et email par Ecochaleur Habitat pour recevoir les résultats de mon test et mon étude gratuite.</span>
+                                <span class="checkbox-text">J'ai compris que les aides sont soumises à conditions : logement, revenus, équipement, performance, professionnel qualifié, dossier validé et travaux non commencés.</span>
                             </label>
                         </div>
 
-                        <div class="step-actions split">
-                            <button type="button" class="btn btn-secondary btn-prev">🠔 Précédent</button>
-                            <button type="submit" class="btn btn-primary btn-large btn-submit">✨ ENVOYER MES RÉSULTATS & FERMER</button>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="rgpd_consent" required>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">Conformément au RGPD, les informations transmises dans ce formulaire restent confidentielles et sont utilisées uniquement pour l'étude de mon éligibilité et le traitement de ma demande. Elles ne seront pas communiquées à des tiers sans mon accord préalable.</span>
+                            </label>
                         </div>
-                    </div>
 
-                    <!-- Rejection Message -->
-                    <div class="form-step" id="step-rejected">
-                        <div class="rejected-content">
-                            <div class="rejected-icon">✕</div>
-                            <h2 class="step-title">Désolé, votre profil n'est pas éligible au dispositif actuel.</h2>
-                            <p>Les aides de l'État sont soumises à des critères stricts (statut de propriétaire, type de bâtiment, ancienneté).</p>
-                            <button type="button" class="btn btn-secondary btn-large btn-close-modal">Retourner à la page</button>
+                        <p class="privacy-note">Vos données personnelles sont traitées de manière confidentielle conformément au Règlement Général sur la Protection des Données (RGPD). Vous pouvez demander l'accès, la rectification ou la suppression de vos informations à tout moment.</p>
+
+                        <div class="step-actions split">
+                            <button type="button" class="btn btn-secondary btn-prev">Précédent</button>
+                            <button type="submit" class="btn btn-primary btn-large btn-submit">Envoyer ma demande</button>
                         </div>
                     </div>
 
@@ -278,8 +458,9 @@
                     <div class="form-step" id="step-success">
                         <div class="success-content">
                             <div class="success-icon">✓</div>
-                            <h2 class="step-title">Merci !</h2>
-                            <p>Votre demande est validée. Un conseiller vous rappellera sous 4 heures.</p>
+                            <h2 class="step-title">Merci pour votre demande.</h2>
+                            <p>Votre situation va être étudiée afin de vérifier votre éligibilité aux aides CEE et, selon votre profil, à MaPrimeRénov'.</p>
+                            <p>Un conseiller vous rappellera prochainement pour confirmer les informations de votre logement, votre chauffage actuel et votre projet.</p>
                         </div>
                     </div>
 
