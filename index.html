@@ -331,6 +331,20 @@
                         <h3 class="step-subtitle">Revenus et aides</h3>
 
                         <div class="form-group">
+                            <label class="form-label">Cette section est facultative. Elle sert uniquement à estimer les aides possibles. Vous pouvez choisir de ne pas communiquer votre revenu fiscal de référence lors de cette première demande.</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="checkbox" name="region" value="ile_de_france">
+                                    <span class="radio-content">Je suis en Île-de-France</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="region" value="province">
+                                    <span class="radio-content">Je suis en Province</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label">Nombre de personnes dans le foyer fiscal :</label>
                             <div class="radio-group">
                                 <label class="radio-card">
@@ -360,20 +374,20 @@
                             <label class="form-label">Votre revenu fiscal de référence approximatif :</label>
                             <div class="radio-group">
                                 <label class="radio-card">
-                                    <input type="radio" name="tax_income" value="moins_20000" required>
+                                    <input type="radio" name="tax_income" value="moins_24031" required>
                                     <span class="radio-content">Moins de 24 031 €</span>
                                 </label>
                                 <label class="radio-card">
-                                    <input type="radio" name="tax_income" value="20000_30000">
+                                    <input type="radio" name="tax_income" value="moins_22993">
                                     <span class="radio-content">Moins de 29 933 €</span>
                                 </label>
                                 <label class="radio-card">
-                                    <input type="radio" name="tax_income" value="30000_45000">
+                                    <input type="radio" name="tax_income" value="moins_40851">
                                     <span class="radio-content">Moins de 40 851 €</span>
                                 </label>
                             
                                 <label class="radio-card">
-                                    <input type="radio" name="tax_income" value="plus_60000">
+                                    <input type="radio" name="tax_income" value="plus_40851">
                                     <span class="radio-content">Plus de 40 851 €</span>
                                 </label>
                                 <label class="radio-card">
@@ -409,10 +423,7 @@
                                     <input type="checkbox" name="project_goal" value="installer_pac">
                                     <span class="radio-content">Installer une pompe à chaleur air/eau</span>
                                 </label>
-                                <label class="radio-card">
-                                    <input type="checkbox" name="project_goal" value="eau_chaude_sanitaire">
-                                    <span class="radio-content">Produire aussi mon eau chaude sanitaire</span>
-                                </label>
+                            
                                 <label class="radio-card">
                                     <input type="checkbox" name="project_goal" value="ameliorer_confort">
                                     <span class="radio-content">Améliorer le confort du logement</span>
