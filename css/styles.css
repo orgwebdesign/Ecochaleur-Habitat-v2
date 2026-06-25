@@ -253,9 +253,9 @@ h1, h2, h3, h4 {
 }
 
 .nav-cta:hover {
-    background: var(--primary-hover);
+    background: #097839;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(27, 59, 43, 0.2);
+    box-shadow: 0 4px 12px rgba(9, 120, 57, 0.3);
 }
 
 /* Hero Section — Dark Full-Image Layout */
